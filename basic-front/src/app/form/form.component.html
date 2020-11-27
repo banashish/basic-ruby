@@ -1,0 +1,37 @@
+<div class="my-5 mr-5">
+    <div style="background-color: darkolivegreen">
+        <h2 class="p-2" style="color: aliceblue;text-align:center"> Enter Your Movie</h2>
+    </div>
+    <div class="mt-4">
+        <form [formGroup]="movieForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="movieName">Movie Name</label>
+              <input type="text" class="form-control" id="movieName" placeholder="Enter your movie name" formControlName="movieName" [ngClass]="{ 'is-invalid':f.movieName.touched && f.movieName.errors }">
+              <div *ngIf="f.movieName.touched && f.movieName.errors" class="invalid-feedback">
+                <div *ngIf="f.movieName.errors.required">*movieName is required</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="movieGenre">Select your movie genre</label>
+              <select class="form-control" id="movieGenre" formControlName="movieGenre" placeholder="please select" [ngClass]="{ 'is-invalid':f.movieGenre.touched && f.movieGenre.errors }">
+                <option>Thriller</option>
+                <option>Crime</option>
+                <option>Romantic</option>
+                <option>Comedy</option>
+                <option>Sci-Fi</option>
+              </select>
+              <div *ngIf="f.movieGenre.touched && f.movieGenre.errors" class="invalid-feedback">
+                <div *ngIf="f.movieGenre.errors.required">*movie genre is required</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="movieDescription">Provide your description</label>
+              <textarea class="form-control" id="movieDescription" rows="3" formControlName="movieDescription" [ngClass]="{ 'is-invalid':f.movieDescription.touched && f.movieDescription.errors }"></textarea>
+              <div *ngIf="f.movieDescription.touched && f.movieDescription.errors" class="invalid-feedback">
+                <div *ngIf="f.movieDescription.errors.required">*movieDescription is required</div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Submit your movie</button>
+          </form>
+    </div>
+</div>
