@@ -11,3 +11,8 @@
 !.vscode/launch.json
 !.vscode/extensions.json
 .history/*
+
+
+/basic-backend/.bundle
+/basic-backend/vendor/bundle/
+/basic-backend/vendor/ruby/
