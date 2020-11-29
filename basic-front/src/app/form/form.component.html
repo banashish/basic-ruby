@@ -2,6 +2,16 @@
     <div style="background-color: darkolivegreen">
         <h2 class="p-2" style="color: aliceblue;text-align:center"> Enter Your Movie</h2>
     </div>
+
+    <div *ngIf="(itemSaved)" class="alert alert-primary mt-4" role="alert">
+      your response was successfully submitted!
+    </div>
+
+    <div *ngIf="(itemUpdated)" class="alert alert-primary mt-4" role="alert">
+      your response was successfully updated!
+    </div>
+
+
     <div class="mt-4">
         <form [formGroup]="movieForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
