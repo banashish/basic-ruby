@@ -35,6 +35,13 @@
               </div>
             </div>
             <div class="form-group">
+              <label for="directorName">Director Name</label>
+              <input type="text" class="form-control" id="directorName" placeholder="Enter your movie name" formControlName="directorName" [ngClass]="{ 'is-invalid':f.directorName.touched && f.directorName.errors }">
+              <div *ngIf="f.directorName.touched && f.directorName.errors" class="invalid-feedback">
+                <div *ngIf="f.directorName.errors.required">*director Name is required</div>
+              </div>
+            </div>
+            <div class="form-group">
               <label for="movieDescription">Provide your description</label>
               <textarea class="form-control" id="movieDescription" rows="3" formControlName="movieDescription" [ngClass]="{ 'is-invalid':f.movieDescription.touched && f.movieDescription.errors }"></textarea>
               <div *ngIf="f.movieDescription.touched && f.movieDescription.errors" class="invalid-feedback">

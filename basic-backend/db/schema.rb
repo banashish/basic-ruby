@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_29_090648) do
+ActiveRecord::Schema.define(version: 2020_12_05_040818) do
+
+  create_table "directors", force: :cascade do |t|
+    t.string "name"
+    t.integer "age"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "movies", force: :cascade do |t|
     t.string "name"
@@ -18,6 +25,8 @@ ActiveRecord::Schema.define(version: 2020_11_29_090648) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "director_id"
+    t.index ["director_id"], name: "index_movies_on_director_id"
   end
 
 end

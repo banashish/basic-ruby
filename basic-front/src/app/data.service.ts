@@ -21,6 +21,14 @@ export class DataService {
     return this.http.post('/api/movies', payload);
   }
 
+  getParticularMovie(id){
+    return this.http.get(`/api/movies/${id}`);
+  }
+
+  getDirectorMovies(id){
+    return this.http.get(`/api/director/${id}/movies`);
+  }
+
   updateMovie(id,payload){
     return this.http.put(`/api/movies/${id}`, payload);
   }

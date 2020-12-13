@@ -17,6 +17,7 @@ export class FormComponent implements OnInit {
       movieName: ['', [Validators.required]],
       movieGenre: ['', [Validators.required]],
       movieDescription: ['', [Validators.required]],
+      directorName: ['',[Validators.required]],
       movieId: ['']
     });
   }
@@ -39,7 +40,8 @@ export class FormComponent implements OnInit {
         const payload = {
           name: this.movieForm.controls.movieName.value,
           genre: this.movieForm.controls.movieGenre.value,
-          description: this.movieForm.controls.movieDescription.value
+          description: this.movieForm.controls.movieDescription.value,
+          director_name: this.movieForm.controls.directorName.value
         };
         this.service.saveMovie(payload).subscribe(res => {
           this.service.setMovieSubmitted(res);
